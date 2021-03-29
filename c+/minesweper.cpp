@@ -3,8 +3,8 @@ using namespace std;
 
 string board[60];
 
-vector<int> dx = {1 ,1,1,0,0,0,-1,-1,-1};
-vector<int> dy = {-1,0,1,-1,0,1,-1,0,1};
+vector<int> dx = {1,1,0,-1,-1,-1,0,1};
+vector<int> dy = {0,1,1,1,0,-1,-1,-1};
 
 int main (void) {
   int x,y;
@@ -22,8 +22,10 @@ int main (void) {
             cnt++;
           }
         }
-        board[i][j] = cnt;
+        board[i][j] = '0' + cnt;
       }
     }
   }
+  for (int i = 0; i < x; i++) cout << board[i] << endl;
+  return 0;
 }
