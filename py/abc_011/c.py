@@ -6,16 +6,24 @@ arr = sorted([NG1,NG2,NG3], reverse=True)
 i = 0
 count = 0
 tmp = n
-flg = True
-for x in range(100):
-  if (n - 3) == arr[i] or (n - 2) == arr[i] or (n - 1) == arr[i]:
-    if (n-3) == arr[i]:
-      if (n-2) == arr[i+1]:
-        
-  tmp-=3
-  count+=1
-  if tmp <= 0:
-    break
+flg = False
+if not n in arr:
+  for _ in range(100):
+    if tmp-3 in arr:
+      if tmp-2 in arr:
+        if tmp-1 in arr:
+          flg = False
+          break
+        else:
+          tmp -= 1
+      else:
+        tmp -= 2
+    else:
+      tmp -= 3
+    count+=1
+    if tmp <= 0:
+      flg = True
+      break
 
 if flg:
   print('YES')
