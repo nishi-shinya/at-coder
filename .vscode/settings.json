@@ -20,7 +20,8 @@
     "map": "cpp",
     "set": "cpp",
     "unordered_map": "cpp",
-    "iomanip": "cpp"
+    "iomanip": "cpp",
+    "tuple": "cpp"
   },
   "python.pythonPath": "/usr/bin/python"
 }
