@@ -1,14 +1,24 @@
-abcd = input()
+s = str(input())
 
-for i in range(2 ** 3):
-  tmp = format(i, '03b')
-  tmp = tmp.replace('0', '-')
-  tmp = tmp.replace('1', '+')
-  tmp = list(tmp)
+for bit in range(2 ** 3):
+    tmp = s
+    bag = []
+    for j in range(3):
+        if (bit & (1<<j)):
+            bag.append('+')
+        else:
+          bag.append('-')
+    
+    tmp_split = list(tmp)
 
-  sum_n = ''
-  for p_n, p_o in zip(abcd, tmp + ['']):
-    sum_n += p_n + p_o
-  if (eval(sum_n)) == 7:
-    print(sum_n + '=7')
-    break
+    eval_str = ''
+    for i in range(3):
+      eval_str += tmp_split[i]
+      eval_str += bag[i]
+
+    eval_str += tmp_split[3]
+
+    if eval(eval_str) == 7:
+      eval_str += '=7'
+      print(eval_str)
+      exit()
