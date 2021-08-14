@@ -21,7 +21,9 @@
     "set": "cpp",
     "unordered_map": "cpp",
     "iomanip": "cpp",
-    "tuple": "cpp"
+    "tuple": "cpp",
+    "cmath": "cpp",
+    "*.tcc": "cpp"
   },
   "python.pythonPath": "/usr/bin/python"
 }
